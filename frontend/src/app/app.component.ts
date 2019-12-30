@@ -9,14 +9,8 @@ import { tap, map } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
   title = 'Sydney Bros 2 Clan';
-  members: any;
 
-  constructor(private clashApi: CocApiService) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.members = this.clashApi.getMembers().pipe(
-      map((result: any) => result.items),
-      tap(data => console.log(data)),
-    );
-  }
+  ngOnInit() {}
 }

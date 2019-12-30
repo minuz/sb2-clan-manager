@@ -1,0 +1,57 @@
+<div class="container mat-elevation-z8">
+  <div class="loading-shade" *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+
+  <div class="table-container">
+    <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="role">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Role </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.role}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="expLevel">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Exp Level </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.expLevel}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="league">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> League </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <img src="{{element.league.iconUrls.tiny}}" alt="{{element.league.name}}" />
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="trophies">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Trophies </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.trophies}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="clanRank">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Clan Rank </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.clanRank}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="donations">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Donations </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.donations}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="donationsReceived">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Donations Received </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.donationsReceived}} </mat-cell>
+      </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  </div>
+</div>
