@@ -1,7 +1,15 @@
-<mat-toolbar color="primary">SB2 Clan Manager</mat-toolbar>
-<div class="content" role="main">
-  <sb2-members-table></sb2-members-table>
-  <sb2-clouds></sb2-clouds>
-</div>
+<div class="container" [class.is-mobile]="mobileQuery.matches">
+  <sb2-header [snav]="snav"></sb2-header>
+  <mat-sidenav-container class="sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+    <sb2-left-menu></sb2-left-menu>
+    </mat-sidenav>
 
-<router-outlet></router-outlet>
+    <mat-sidenav-content>
+      <sb2-clouds></sb2-clouds>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

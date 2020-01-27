@@ -1,0 +1,7 @@
+.menu-toggle {
+  margin-right: 1rem;
+  cursor: pointer;
+  &:hover {
+    color: lighten($color: yellow, $amount: 5%);
+  }
+}
