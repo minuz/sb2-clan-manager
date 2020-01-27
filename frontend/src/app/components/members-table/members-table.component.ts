@@ -59,7 +59,12 @@ export class MembersTableComponent implements OnInit, AfterViewInit {
     const ratio = row.donationRatio.split(':');
     const lhs = parseInt(ratio[0]);
     const rhs = parseInt(ratio[1]);
+    const warning = 'warning';
 
-    return rhs > 2 || lhs === 0 ? 'warning' : '';
+    if (rhs > 2 || (lhs === 0 && rhs !== 0)) {
+      return warning;
+    }
+
+    return '';
   }
 }

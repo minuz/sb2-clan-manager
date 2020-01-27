@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:libs": "ng build --project=dashboard",
+    "watch:libs": "ng build --project=dashboard --watch",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
