@@ -9,7 +9,6 @@ async function bootstrap() {
     .setTitle('Clan Members')
     .setDescription('The cats API description')
     .setVersion('1.0')
-    .addTag('clan')
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);

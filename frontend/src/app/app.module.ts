@@ -9,16 +9,12 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
+import { MatSortModule } from '@angular/material/sort';
 import { MembersTableComponent } from './components/members-table/members-table.component';
 import { CloudsComponent } from './components/clouds/clouds.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MembersTableComponent,
-    CloudsComponent,
-  ],
+  declarations: [AppComponent, MembersTableComponent, CloudsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,6 +22,7 @@ import { CloudsComponent } from './components/clouds/clouds.component';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
+    MatSortModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
   ],

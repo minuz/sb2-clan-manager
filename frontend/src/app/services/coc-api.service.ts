@@ -11,7 +11,16 @@ import { Member } from '../models/member.model';
 export class CocApiService {
   constructor(private http: HttpClient) {}
 
-  getMembers(): Observable<Member[]> {
-    return this.http.get('api/clan').pipe(map((result: any) => result.items));
+  getMembers(sort): Observable<Member[]> {
+    let url = 'api/clan';
+
+    if (sort) {
+      url = `${url}?active=${sort.active}&direction=${sort.direction}`;
+    }
+
+    return this.http.get(url).pipe(map((result: any) => {
+      console.log(result);
+      return result;
+    }));
   }
 }

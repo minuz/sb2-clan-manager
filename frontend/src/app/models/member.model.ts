@@ -12,4 +12,5 @@ export class Member {
   previousClanRank: number;
   donations: number;
   donationsReceived: number;
+  donationRatio: string;
 }

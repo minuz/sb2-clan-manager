@@ -1,11 +1,21 @@
 <div class="container mat-elevation-z8">
-  <div class="loading-shade" *ngIf="isLoadingResults">
-    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  <div class="loading-shade" *ngIf="isLoading | async">
+    <mat-spinner *ngIf="isLoading | async"></mat-spinner>
   </div>
 
   <div class="table-container">
-    <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    <mat-table [dataSource]="datasource"
+                matSort matSortActive="clanRank" matSortDisableClear matSortDirection="asc">
+
+      <ng-container matColumnDef="tag">
+        <mat-header-cell *matHeaderCellDef> Tag </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.tag}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="clanRank">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Clan Rank </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.clanRank}} </mat-cell>
+      </ng-container>
 
       <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
@@ -34,9 +44,9 @@
         <mat-cell *matCellDef="let element"> {{element.trophies}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="clanRank">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Clan Rank </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.clanRank}} </mat-cell>
+      <ng-container matColumnDef="donationRatio">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Donation Ratio </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.donationRatio}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="donations">
@@ -50,7 +60,7 @@
       </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="checkIsWarning(row)"></mat-row>
   </mat-table>
 
   </div>

@@ -4,7 +4,7 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug Nest Framework",
+      "name": "Backend debugger",
       "args": [
         "${workspaceFolder}/backend/src/main.ts"
       ],
