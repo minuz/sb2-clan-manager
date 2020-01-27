@@ -1,15 +1,15 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { BehaviorSubject, of } from 'rxjs';
 import { catchError, finalize, switchMap, tap } from 'rxjs/operators';
-import { Member } from 'src/app/models/member.model';
-import { CocApiService } from 'src/app/services/coc-api.service';
+import { Member } from '../models/member.model';
+import { MembersApiService } from '../services/members.service';
 
 @Component({
   selector: 'sb2-members-table',
   templateUrl: './members-table.component.html',
-  styleUrls: ['./members-table.component.scss'],
+  styleUrls: ['./members-table.component.scss']
 })
 export class MembersTableComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = [
@@ -30,7 +30,7 @@ export class MembersTableComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor(private readonly api: CocApiService) {
+  constructor(private readonly api: MembersApiService) {
     this.datasource = new MatTableDataSource<Member>();
     this.datasource.sort = this.sort;
   }

@@ -24,6 +24,12 @@
       ],
       "dashboard/*": [
         "dist/dashboard/*"
+      ],
+      "members": [
+        "dist/members"
+      ],
+      "members/*": [
+        "dist/members/*"
       ]
     }
   },

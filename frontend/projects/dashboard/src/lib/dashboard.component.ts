@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-dashboard',
+  selector: 'sb2-dashboard',
   template: `
     <p>
       dashboard works!

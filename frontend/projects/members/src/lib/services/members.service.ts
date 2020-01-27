@@ -5,10 +5,8 @@ import { map } from 'rxjs/operators';
 
 import { Member } from '../models/member.model';
 
-@Injectable({
-  providedIn: 'root',
-})
-export class CocApiService {
+@Injectable()
+export class MembersApiService {
   constructor(private http: HttpClient) {}
 
   getMembers(sort): Observable<Member[]> {

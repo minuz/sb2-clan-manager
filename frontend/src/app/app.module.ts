@@ -17,12 +17,10 @@ import { AppComponent } from './app.component';
 import { CloudsComponent } from './components/clouds/clouds.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LeftMenuComponent } from './components/left-menu/left-menu.component';
-import { MembersTableComponent } from './components/members-table/members-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MembersTableComponent,
     CloudsComponent,
     HeaderComponent,
     LeftMenuComponent,

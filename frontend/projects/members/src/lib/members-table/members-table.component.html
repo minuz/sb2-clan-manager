@@ -2,9 +2,6 @@
   <div class="loading-shade" *ngIf="isLoading | async">
     <mat-spinner *ngIf="isLoading | async"></mat-spinner>
   </div>
-
-  <h2>Clan Members</h2>
-
   <div class="table-container">
     <mat-table [dataSource]="datasource"
                 matSort matSortActive="clanRank" matSortDisableClear matSortDirection="asc">

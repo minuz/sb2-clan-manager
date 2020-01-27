@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CocApiService } from './coc-api.service';
+import { CocApiService } from './members.service';
 
 describe('CocApiService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

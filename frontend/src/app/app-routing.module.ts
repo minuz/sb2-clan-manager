@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { MembersTableComponent } from './components/members-table/members-table.component';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
-  { path: 'members', component: MembersTableComponent },
+  { path: '', pathMatch: 'full', redirectTo: '/members' },
+  {
+    path: 'members',
+    loadChildren: () => import('members').then(mod => mod.MembersModule),
+  },
   {
     path: 'dashboard',
     loadChildren: () => import('dashboard').then(mod => mod.DashboardModule),
