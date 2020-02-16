@@ -23,6 +23,19 @@ export class ClanService extends BaseService {
     );
   }
 
+  getPlayersList() {
+    const url = `${this.cocApi}/clans/${this.clanTag}/members`;
+    return this.http.get(url, { headers: this.headers }).pipe(
+      map(response =>
+        response.data.items.map(player => ({
+          tag: player.tag,
+          name: player.name,
+        })),
+      ),
+      map(data => this.sort(data, 'name', 'ASC')),
+    );
+  }
+
   private renameRoles(data: any[]) {
     return data.map(item => {
       switch (item.role) {

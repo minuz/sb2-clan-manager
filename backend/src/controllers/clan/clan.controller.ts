@@ -10,4 +10,9 @@ export class ClanController {
   async getClanMembers(@Query() sort: ISort) {
     return await this.clanService.getClanMembers(sort.active, sort.direction);
   }
+
+  @Get('list')
+  async getPlayersList() {
+    return await this.clanService.getPlayersList();
+  }
 }

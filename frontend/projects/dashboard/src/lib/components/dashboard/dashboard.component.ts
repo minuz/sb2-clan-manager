@@ -2,18 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'sb2-dashboard',
-  template: `
-    <p>
-      dashboard works!
-    </p>
-  `,
-  styles: []
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

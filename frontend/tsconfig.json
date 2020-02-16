@@ -30,6 +30,12 @@
       ],
       "members/*": [
         "dist/members/*"
+      ],
+      "@sb2/player-details": [
+        "dist/sb2/player-details"
+      ],
+      "@sb2/player-details/*": [
+        "dist/sb2/player-details/*"
       ]
     }
   },

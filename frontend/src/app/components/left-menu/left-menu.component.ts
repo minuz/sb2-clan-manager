@@ -13,6 +13,7 @@ export class LeftMenuComponent implements OnInit {
     this.navLinks = [
       { label: 'Dashboard', link: 'dashboard'},
       { label: 'Members', link: 'members'},
+      { label: 'Players', link: 'player-details'},
     ];
   }
 

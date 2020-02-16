@@ -7,6 +7,7 @@
     "build": "ng build",
     "build:lib:dashboard": "ng build --project=dashboard",
     "build:lib:members": "ng build --project=members",
+    "build:lib:players": "ng build --project=@sb2/player-details",
     "build:libs": "run-s build:lib:*",
     "watch:dashboard": "ng build:lib:dashboard --watch",
     "watch:members": "ng build:lib:members --watch",

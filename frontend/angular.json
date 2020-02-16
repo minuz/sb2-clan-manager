@@ -197,6 +197,41 @@
           }
         }
       }
+    },
+    "@sb2/player-details": {
+      "projectType": "library",
+      "root": "projects/sb2/player-details",
+      "sourceRoot": "projects/sb2/player-details/src",
+      "prefix": "sb2",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/sb2/player-details/tsconfig.lib.json",
+            "project": "projects/sb2/player-details/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sb2/player-details/src/test.ts",
+            "tsConfig": "projects/sb2/player-details/tsconfig.spec.json",
+            "karmaConfig": "projects/sb2/player-details/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/sb2/player-details/tsconfig.lib.json",
+              "projects/sb2/player-details/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "sb2-clan-manager"
