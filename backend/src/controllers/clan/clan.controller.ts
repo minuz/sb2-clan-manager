@@ -1,6 +1,6 @@
 import { Controller, Get, Query } from '@nestjs/common';
-import { ISort } from 'src/models/sort.model';
-import { ClanService } from 'src/services/clan/clan.service';
+import { ISort } from 'src/global/models/sort.model';
+import { ClanService } from 'src/global/services/clan/clan.service';
 
 @Controller('clan')
 export class ClanController {

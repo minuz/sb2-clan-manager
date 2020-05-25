@@ -20,12 +20,14 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@nestjs-addons/in-memory-db": "^1.8.10",
     "@nestjs/common": "^6.11.7",
     "@nestjs/config": "^0.2.2",
     "@nestjs/core": "^6.11.7",
     "@nestjs/platform-express": "^6.11.7",
     "@nestjs/swagger": "^4.2.8",
     "cache-manager": "^2.11.1",
+    "express": "^4.17.1",
     "lodash": "^4.17.15",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",

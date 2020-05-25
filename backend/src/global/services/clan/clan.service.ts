@@ -3,6 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import { sortBy } from 'lodash';
 import { of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { Player } from 'src/global/models/player';
 
 import { BaseService } from '../base.service';
 
@@ -19,7 +20,9 @@ export class ClanService extends BaseService {
       map(data => this.renameRoles(data)),
       map(data => this.calculateDonationRatio(data)),
       map((data: any[]) => this.sort(data, active, direction)),
-      catchError(e => of(e)),
+      catchError(e => {
+        return of(e);
+      }),
     );
   }
 
@@ -36,7 +39,7 @@ export class ClanService extends BaseService {
     );
   }
 
-  private renameRoles(data: any[]) {
+  private renameRoles(data: Player[]) {
     return data.map(item => {
       switch (item.role) {
         case 'admin':

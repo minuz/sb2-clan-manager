@@ -5,6 +5,7 @@ import { MembersTableComponent } from './members-table/members-table.component';
 
 const routes: Routes = [
   { path: '', component: MembersTableComponent },
+  { path: '*', component: MembersTableComponent },
 ];
 
 @NgModule({

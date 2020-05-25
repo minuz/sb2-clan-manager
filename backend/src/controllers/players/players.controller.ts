@@ -1,5 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { PlayersService } from 'src/services/players/players.service';
+import { PlayersService } from 'src/global/services/players/players.service';
 
 @Controller('players')
 export class PlayersController {
